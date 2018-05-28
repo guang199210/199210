@@ -14,5 +14,4 @@ class user extends Model
     {
         return $this ->hasOne(Profile::class);
     }
-
 }

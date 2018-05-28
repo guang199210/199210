@@ -10,6 +10,7 @@ use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
+use Encore\Admin\Widgets\Table;
 
 class AskController extends Controller
 {
@@ -95,6 +96,10 @@ class AskController extends Controller
                         return "<span class = 'label label-default'>否</span>";
                 }
             });
+            $grid->column('expand','回答')->expand(function(){
+                $answer = array_only($this->answer,['answer']);
+                return new Table([],$answer);
+            },'Answer');
 
             $grid->column('created_at','创建时间');
             $grid->column('updated_at','更新时间');
