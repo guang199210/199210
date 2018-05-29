@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $table = 'articles';
-    public function comment()
-    {
-        return $this -> HasOne(Comment::class);
-    }
+
 
     public static function boot()
     {

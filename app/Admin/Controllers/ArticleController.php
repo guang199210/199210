@@ -89,9 +89,9 @@ class ArticleController extends Controller
             });
             $grid ->column('title','标题');
             $grid ->column('author','作者');
-            $grid ->column('label','标签');
+            $grid ->column('label','标签');          //风水/选材/...
 
-            $grid ->column('type','类型');
+            $grid ->column('type','类型');           //百科/咨讯/...
             $grid ->column('content','内容');
             $grid ->column('is_adapt','加精')->display(function ($value){
                 switch ($value){

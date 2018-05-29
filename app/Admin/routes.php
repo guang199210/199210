@@ -17,6 +17,8 @@ Route::group([
     $router->resource('/sprucecase',SpruceCaseController::class);
     $router->resource('/business',BusinessController::class);
     $router->resource('/asks',AskController::class);
+    $router->resource('/comments',CommentController::class);
+    $router->resource('/replies',ReplyController::class);
 
 
 
