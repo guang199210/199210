@@ -19,6 +19,7 @@ Route::group([
     $router->resource('/asks',AskController::class);
     $router->resource('/comments',CommentController::class);
     $router->resource('/replies',ReplyController::class);
+    $router->resource('/tenders',TenderController::class);
 
 
 
