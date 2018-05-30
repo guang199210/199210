@@ -16,7 +16,7 @@ class CommentController extends Controller
     use ModelForm;
 
     /**
-     * Index interface.
+     * IndexController interface.
      *
      * @return Content
      */

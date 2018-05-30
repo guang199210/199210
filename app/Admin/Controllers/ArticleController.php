@@ -17,7 +17,7 @@ class ArticleController extends Controller
     use ModelForm;
 
     /**
-     * Index interface.
+     * IndexController interface.
      *
      * @return Content
      */

@@ -17,7 +17,7 @@ class BusinessController extends Controller
 
 
     /**
-     * Index interface.
+     * IndexController interface.
      *
      * @return Content
      */
@@ -103,15 +103,21 @@ class BusinessController extends Controller
                 $form->mobile('phone','手机号码');
                 $form->text('address','地址');
                 $form->image('logo','Logo');
-            })->tab('详细信息',function (Form $form){
-                $form->text('contacts','联系人');
-                $form->radio('is_amount','免费量房')->options([1=>'是',0=>'否']);
-                $form->radio('is_offer','报价')->options([1=>'是',0=>'否']);
-                $form->display('num_comment','评论量');
-                $form->text('pub_praise','口碑');
-                $form->display('last_login','上次登录');
                 $form->display('created_at','创建时间');
                 $form->display('updated_at','更新时间');
+            })->tab('详细信息',function (Form $form){
+                $form->text('businfo.contacts','联系人');
+                $form->radio('businfo.is_amount','免费量房')->options([1=>'是',0=>'否']);
+                $form->radio('businfo.is_offer','报价')->options([1=>'是',0=>'否']);
+                $form->display('businfo.num_comment','评论量');
+                $form->text('businfo.pub_praise','口碑');
+                $status= [
+                    'on' => ['value'=>1, 'text' => '是'],
+                    'off'=> ['value'=>0, 'text' => '否']
+                ];
+                $form->switch('businfo.is_show','首页显示')->states($status);
+                $form->display('businfo.last_login','上次登录');
+
             });
         });
     }
